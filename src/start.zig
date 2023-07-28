@@ -127,11 +127,11 @@ export fn microzig_main() noreturn {
 /// Contains references to the microzig .data and .bss sections, also
 /// contains the initial load address for .data if it is in flash.
 pub const sections = struct {
-    extern var microzig_data_start: anyopaque;
-    extern var microzig_data_end: anyopaque;
-    extern var microzig_bss_start: anyopaque;
-    extern var microzig_bss_end: anyopaque;
-    extern const microzig_data_load_start: anyopaque;
+    extern var microzig_data_start: u8;
+    extern var microzig_data_end: u8;
+    extern var microzig_bss_start: u8;
+    extern var microzig_bss_end: u8;
+    extern const microzig_data_load_start: u8;
 };
 
 pub fn initialize_system_memories() void {

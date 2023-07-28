@@ -70,11 +70,11 @@ pub fn clrex() void {
 pub const startup_logic = struct {
     extern fn microzig_main() noreturn;
 
-    extern var microzig_data_start: anyopaque;
-    extern var microzig_data_end: anyopaque;
-    extern var microzig_bss_start: anyopaque;
-    extern var microzig_bss_end: anyopaque;
-    extern const microzig_data_load_start: anyopaque;
+    extern var microzig_data_start: u8;
+    extern var microzig_data_end: u8;
+    extern var microzig_bss_start: u8;
+    extern var microzig_bss_end: u8;
+    extern const microzig_data_load_start: u8;
 
     pub fn _start() callconv(.C) noreturn {
 
